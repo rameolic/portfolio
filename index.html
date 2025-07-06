@@ -48,6 +48,18 @@
 
     gtag("config", "G-3JCNF8F0Y4");
   </script>
+
+  <!-- Security Meta Tags -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.jsdelivr.net https://cdn.iconscout.com; connect-src 'self' https://www.google-analytics.com;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Preload Critical CSS and Fonts -->
+  <link rel="preload" href="./assets/css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/main.min.css"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap"></noscript>
 </head>
 
 <body>
@@ -100,11 +112,11 @@
         <img src="./assets/img/favicon.png" alt="Professional Me" width="20%" style="border-radius: 50%" />
       </picture> -->
       <p>
-        I’m Ramkumar Koppula, an experienced Application Developer with over four years of expertise in Flutter and
+        I'm Ramkumar Koppula, an experienced Application Developer with over four years of expertise in Flutter and
         Dart. Passionate about creating seamless user experiences, I specialize in building high-performance
         applications for both iOS and Android.My technical skill set includes Flutter & Dart, Xcode, Kotlin, MySQL,
         Firebase, PHP, CodeIgniter, UI/UX Design, and RESTful API integration, enabling me to contribute to both
-        front-end and back-end development. I’m also proficient in version control using GitHub and GitLab, ensuring
+        front-end and back-end development. I'm also proficient in version control using GitHub and GitLab, ensuring
         efficient collaboration and streamlined code management.
         Beyond development, I excel at researching and gathering information from the internet, allowing me to stay
         updated with the latest technologies and best practices. I have a strong ability to learn and build things based
@@ -190,7 +202,7 @@
       <div class="images-right">
         <picture>
           <source type="image/webp" srcset="./assets/img/portfolio.png" alt="Personal Website" />
-          <img alt="Personal Website" src="./assets/img/portfolio.png" />
+          <img loading="lazy" src="./assets/img/portfolio.png" alt="Personal Website" />
         </picture>
       </div>
       <div class="contents" style="text-align: center">
@@ -224,7 +236,7 @@
       <div class="images-left">
         <picture>
           <source type="image/webp" srcset="./assets/img/insightse.png" alt="InsightsE" />
-          <img alt="InsightsE" src="./assets/img/insightse.png" />
+          <img loading="lazy" src="./assets/img/insightse.png" alt="InsightsE" />
         </picture>
       </div>
       <div class="contents-right" style="text-align: center">
@@ -254,7 +266,7 @@
       <div class="images-right">
         <picture>
           <source type="image/webp" srcset="./assets/img/teacher.png" alt="InsightsE Teacher" />
-          <img alt="InsightsE Teacher" src="./assets/img/teacher.png" />
+          <img loading="lazy" src="./assets/img/teacher.png" alt="InsightsE Teacher" />
         </picture>
       </div>
       <div class="contents-right" style="text-align: center">
@@ -283,7 +295,7 @@
       <div class="images-left">
         <picture>
           <source type="image/webp" srcset="./assets/img/management.png" alt="insightse management" />
-          <img alt="InsightsE Management" src="./assets/img/management.png" />
+          <img loading="lazy" src="./assets/img/management.png" alt="InsightsE Management" />
         </picture>
       </div>
       <div class="contents-right" style="text-align: center">
@@ -311,7 +323,8 @@
       <div class="images-right">
         <picture>
           <source type="image/webp" srcset="./assets/img/rms.png" alt="Rhapsody merchandising services" />
-          <img alt="Rhapsody merchandising services" src="./assets/img/rms.png" </picture>
+          <img loading="lazy" src="./assets/img/rms.png" alt="Rhapsody merchandising services" />
+        </picture>
       </div>
       <div class="contents-right" style="text-align: center">
         <h3>Rhapsody merchandising services</h3>
@@ -341,7 +354,7 @@
       <div class="images-left">
         <picture>
           <source type="image/webp" srcset="./assets/img/halo.png" alt="Halo CRM" />
-          <img alt="Halo CRM" src="./assets/img/halo.png" />
+          <img loading="lazy" src="./assets/img/halo.png" alt="Halo CRM" />
         </picture>
       </div>
       <div class="contents-right" style="text-align: center">
@@ -374,7 +387,7 @@
   <!-- Import JS: Sweet Scroll -->
   <script src="./assets/js/sweet-scroll.min.js"></script>
   <!-- Import JS: Main Script -->
-  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/main.min.js"></script>
 </body>
 
 </html>

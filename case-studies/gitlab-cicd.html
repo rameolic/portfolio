@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GitLab CI/CD for Android &amp; iOS — Case Study | Ramkumar Koppula</title>
+  <meta name="description" content="Android and iOS GitLab CI/CD pipelines built from scratch: tag-triggered builds, signing workflows, and manual store publication." />
+  <link rel="canonical" href="https://rameolic.github.io/portfolio/case-studies/gitlab-cicd.html" />
+  <meta property="og:title" content="GitLab CI/CD for Android &amp; iOS — Case Study" />
+  <meta property="og:description" content="Tag-triggered Flutter mobile pipelines with APK/AAB and IPA artifacts; store publishing managed manually." />
+  <meta property="og:url" content="https://rameolic.github.io/portfolio/case-studies/gitlab-cicd.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">Ramkumar Koppula</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html#projects">Work</a></li>
+          <li><a href="../index.html#case-studies">Case Studies</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="../index.html">Home</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <p class="section-kicker">Engineering Case Study</p>
+        <h1>GitLab CI/CD for Android &amp; iOS</h1>
+        <p>Personal ownership of mobile build pipelines built from scratch—automating compilation and artifact generation while keeping store publication manual.</p>
+        <nav class="cs-toc" aria-label="On this page">
+          <a href="#scope">Scope</a>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#practices">Release practices</a>
+        </nav>
+      </div>
+    </header>
+
+    <article class="cs-content">
+      <div class="container">
+        <h2 id="scope">What I built</h2>
+        <ul class="checklist">
+          <li>Tag-triggered builds for intentional release candidates</li>
+          <li>Dependency installation and Flutter/platform setup in CI</li>
+          <li>Android APK/AAB generation</li>
+          <li>iOS IPA generation</li>
+          <li>Signing and provisioning workflows</li>
+          <li>Build artifact generation for downstream release steps</li>
+        </ul>
+        <p>
+          Google Play Store and Apple App Store publication were managed manually. This case study does not claim fully automated store publishing.
+        </p>
+
+        <h2 id="pipeline">Pipeline diagram</h2>
+        <div class="pipeline" role="list" aria-label="GitLab CI/CD pipeline">
+          <div class="pipeline-step" role="listitem">Git tag<small>Release trigger</small></div>
+          <div class="pipeline-step" role="listitem">Setup<small>Deps &amp; toolchain</small></div>
+          <div class="pipeline-step" role="listitem">Android<small>APK / AAB</small></div>
+          <div class="pipeline-step" role="listitem">iOS<small>IPA</small></div>
+          <div class="pipeline-step" role="listitem">Signing<small>Keys &amp; profiles</small></div>
+          <div class="pipeline-step" role="listitem">Artifacts<small>Manual store upload</small></div>
+        </div>
+
+        <h2 id="practices">Branching and release troubleshooting</h2>
+        <p>
+          Pipelines sit alongside Git branching practices used for feature work and release preparation. When builds fail—dependency drift, signing mismatches, or platform tooling issues—I troubleshoot through the CI logs and local reproduction to restore a reliable release path.
+        </p>
+        <p>
+          The value of the pipeline is repeatability: the same tagged revision produces the mobile artifacts used for store submission, reducing “works on my machine” variance during release week.
+        </p>
+
+        <p style="margin-top:2rem">
+          <a class="btn btn-primary" href="../index.html#cicd">Back to portfolio CI/CD</a>
+          <a class="btn btn-secondary" href="./canteen-pos.html">Related: Canteen POS</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Ramkumar Koppula · <a href="../index.html">Portfolio home</a></p>
+    </div>
+  </footer>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/portfolio.js"></script>
+</body>
+</html>

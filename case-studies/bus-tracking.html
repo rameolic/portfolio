@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Real-Time School Bus Tracking — Case Study | Ramkumar Koppula</title>
+  <meta name="description" content="Architecture and implementation of real-time school bus tracking for ~100 GPS-equipped buses using REST, Cloud Firestore listeners, and Google Maps." />
+  <link rel="canonical" href="https://rameolic.github.io/portfolio/case-studies/bus-tracking.html" />
+  <meta property="og:title" content="Real-Time School Bus Tracking — Case Study" />
+  <meta property="og:description" content="REST bootstrap, Firestore snapshot listeners, Google Maps, and lifecycle-aware listener management." />
+  <meta property="og:url" content="https://rameolic.github.io/portfolio/case-studies/bus-tracking.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">Ramkumar Koppula</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html#projects">Work</a></li>
+          <li><a href="../index.html#case-studies">Case Studies</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="../index.html">Home</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <p class="section-kicker">Engineering Case Study</p>
+        <h1>Real-Time School Bus Tracking</h1>
+        <p>Contributed to architecture and implementation of live tracking for approximately 100 GPS-equipped school buses within the InsightsE ecosystem.</p>
+        <nav class="cs-toc" aria-label="On this page">
+          <a href="#context">Context</a>
+          <a href="#approach">Technical approach</a>
+          <a href="#lifecycle">Lifecycle &amp; listeners</a>
+          <a href="#outcomes">Outcomes</a>
+        </nav>
+      </div>
+    </header>
+
+    <article class="cs-content">
+      <div class="container">
+        <h2 id="context">Context</h2>
+        <p>
+          Parents and school stakeholders need timely visibility into school transport. The system supports approximately 100 GPS-equipped buses. The mobile experience must show map positions that stay current without becoming fragile when the app backgrounds, reconnects, or receives delayed GPS updates.
+        </p>
+
+        <h2 id="approach">Technical approach</h2>
+        <ul class="checklist">
+          <li><strong>REST APIs</strong> retrieve initial location data when the tracking experience starts.</li>
+          <li><strong>Cloud Firestore snapshot listeners</strong> deliver real-time location updates after bootstrap.</li>
+          <li><strong>Google Maps</strong> visualizes bus positions for end users.</li>
+          <li><strong>Stale-location detection</strong> helps identify when a reported position should no longer be treated as fresh.</li>
+          <li><strong>Application lifecycle handling</strong> keeps subscriptions aligned with foreground/background behavior.</li>
+          <li><strong>Listener cleanup and reconnection handling</strong> reduce leaks and missed updates after interruptions.</li>
+        </ul>
+        <p>
+          <strong>Important:</strong> school bus tracking does <em>not</em> use WebSockets for live location. Real-time updates are driven by Firestore snapshot listeners after the initial REST fetch.
+        </p>
+
+        <div class="arch-diagram" role="img" aria-label="Bus tracking data flow">
+          <div class="arch-row">
+            <div class="arch-node">REST bootstrap<span>Initial locations</span></div>
+            <div class="arch-node">Firestore listeners<span>Live location snapshots</span></div>
+            <div class="arch-node">Google Maps UI<span>Markers &amp; updates</span></div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-node">Lifecycle hooks<span>Subscribe / pause / resume</span></div>
+            <div class="arch-node">Stale detection<span>Freshness rules</span></div>
+            <div class="arch-node">Cleanup<span>Cancel listeners safely</span></div>
+          </div>
+        </div>
+
+        <h2 id="lifecycle">Why listener and lifecycle management matter</h2>
+        <p>
+          Real-time listeners are easy to attach and easy to get wrong. If subscriptions outlive the screen or app state that needs them, clients waste resources and can show outdated markers. If they are torn down too aggressively—or never re-established after reconnect—users see gaps in tracking.
+        </p>
+        <p>
+          Production work therefore treated listener scope, cleanup, stale detection, and reconnection as part of the feature—not optional polish.
+        </p>
+
+        <h2 id="outcomes">Outcomes</h2>
+        <ul class="checklist">
+          <li>Live map tracking for roughly 100 GPS-equipped buses</li>
+          <li>Clear separation between initial REST load and continuous Firestore updates</li>
+          <li>Operational attention to stale data and mobile lifecycle edge cases</li>
+        </ul>
+
+        <p style="margin-top:2rem">
+          <a class="btn btn-primary" href="../index.html#projects">Back to portfolio</a>
+          <a class="btn btn-secondary" href="./white-label.html">Next: White-label architecture</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Ramkumar Koppula · <a href="../index.html">Portfolio home</a></p>
+    </div>
+  </footer>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/portfolio.js"></script>
+</body>
+</html>

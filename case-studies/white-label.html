@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>White-Label Flutter Architecture — Case Study | Ramkumar Koppula</title>
+  <meta name="description" content="Shared Flutter architecture supporting multiple organizations with flavors, build variants, branding, and feature-specific configuration." />
+  <link rel="canonical" href="https://rameolic.github.io/portfolio/case-studies/white-label.html" />
+  <meta property="og:title" content="White-Label Flutter Architecture — Case Study" />
+  <meta property="og:description" content="Shared codebase, Flutter flavors, branding, and configurable features for multi-organization delivery." />
+  <meta property="og:url" content="https://rameolic.github.io/portfolio/case-studies/white-label.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html">Ramkumar Koppula</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html#projects">Work</a></li>
+          <li><a href="../index.html#case-studies">Case Studies</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="../index.html">Home</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Switch theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="cs-hero">
+      <div class="container">
+        <p class="section-kicker">Engineering Case Study</p>
+        <h1>White-Label Flutter Architecture</h1>
+        <p>Designing a shared Flutter application architecture that supports multiple organizations without maintaining fully separate codebases.</p>
+        <nav class="cs-toc" aria-label="On this page">
+          <a href="#problem">Problem</a>
+          <a href="#approach">Approach</a>
+          <a href="#benefits">Benefits</a>
+        </nav>
+      </div>
+    </header>
+
+    <article class="cs-content">
+      <div class="container">
+        <h2 id="problem">Problem</h2>
+        <p>
+          Multiple organizations need branded applications that share core product capabilities. Duplicating entire Flutter apps per organization increases maintenance cost, slows fixes, and fragments UI patterns. The architecture needed a single reusable codebase with controlled variation.
+        </p>
+
+        <h2 id="approach">Technical approach</h2>
+        <ul class="checklist">
+          <li>Shared Flutter application codebase</li>
+          <li>Flutter flavors and build variants</li>
+          <li>Different application identifiers per organization</li>
+          <li>Branded app names, icons, splash screens, and themes</li>
+          <li>Feature-specific configuration where organizations differ</li>
+        </ul>
+
+        <div class="arch-diagram" role="img" aria-label="White-label architecture diagram">
+          <div class="arch-row">
+            <div class="arch-node">Shared core<span>Features, UI patterns, domain</span></div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-node">Flavor A<span>IDs, branding, config</span></div>
+            <div class="arch-node">Flavor B<span>IDs, branding, config</span></div>
+            <div class="arch-node">Flavor N<span>IDs, branding, config</span></div>
+          </div>
+        </div>
+
+        <h2 id="benefits">Why this helps</h2>
+        <p>
+          Flavors and configuration keep organization-specific differences at the edges of the system—identity, branding, and feature flags—while shared modules absorb product improvements once. That improves maintainability and makes release management more predictable across branded deployments.
+        </p>
+        <p>
+          This case study describes the architectural approach used in production work. It does not expose confidential organization names, internal endpoints, or private configuration values.
+        </p>
+
+        <p style="margin-top:2rem">
+          <a class="btn btn-primary" href="../index.html#projects">Back to portfolio</a>
+          <a class="btn btn-secondary" href="./gitlab-cicd.html">Next: GitLab CI/CD</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Ramkumar Koppula · <a href="../index.html">Portfolio home</a></p>
+    </div>
+  </footer>
+  <script src="../assets/js/content.js"></script>
+  <script src="../assets/js/portfolio.js"></script>
+</body>
+</html>

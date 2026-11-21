@@ -82,12 +82,11 @@
       <a class="brand" href="#hero">Ramkumar Koppula</a>
       <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="#highlights">Highlights</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Work</a></li>
           <li><a href="#case-studies">Case Studies</a></li>
           <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -99,35 +98,54 @@
     </div>
   </header>
   <div class="nav-drawer" id="mobile-nav" data-nav-drawer>
-    <a href="#highlights">Highlights</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Work</a>
+    <a href="#gallery">Gallery</a>
     <a href="#case-studies">Case Studies</a>
     <a href="#architecture">Architecture</a>
     <a href="#cicd">CI/CD</a>
+    <a href="#hardware">Hardware</a>
     <a href="#leadership">Leadership</a>
     <a href="#skills">Skills</a>
-    <a href="#workflow">Workflow</a>
+    <a href="#workflow">Process</a>
     <a href="#contact">Contact</a>
   </div>
 
   <main id="main">
     <section class="hero" id="hero" aria-labelledby="hero-name">
       <div class="hero-inner">
-        <p class="hero-meta">Kakinada, India · Open to relocation</p>
-        <h1 class="hero-name" id="hero-name">Ramkumar Koppula</h1>
-        <p class="hero-role">Frontend UI Engineering Lead | Senior Flutter Developer</p>
-        <p class="hero-headline">Building Scalable Digital Experiences Across Platforms.</p>
-        <p class="hero-copy">
-          Frontend UI Engineering Lead and Senior Flutter Developer with nearly six years of experience building production applications, leading frontend teams, and delivering cross-platform solutions used by 60,000+ people every month.
-        </p>
-        <div class="btn-group">
-          <a class="btn btn-primary" href="#projects">Explore My Work</a>
-          <a class="btn btn-ghost" href="#experience">View Experience</a>
-          <a class="btn btn-ghost" href="#contact">Contact Me</a>
-          <a class="btn btn-ghost" data-resume-link href="https://drive.google.com/file/d/1-He0u-U2OzViAtpq0_muwoRdpvkxphUb/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Download Resume</a>
+        <div class="hero-copy-col">
+          <p class="hero-meta">Kakinada, India · Open to relocation</p>
+          <h1 class="hero-name" id="hero-name">Ramkumar Koppula</h1>
+          <p class="hero-role">Frontend UI Engineering Lead | Senior Flutter Developer</p>
+          <p class="hero-headline">Building Scalable Digital Experiences Across Platforms.</p>
+          <p class="hero-copy">
+            Nearly six years shipping production Flutter apps across mobile, desktop, and web—leading frontend delivery while staying hands-on in architecture and code.
+          </p>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#projects">Explore Projects</a>
+            <a class="btn btn-ghost" data-resume-link href="https://drive.google.com/file/d/1-He0u-U2OzViAtpq0_muwoRdpvkxphUb/view?usp=drive_link" rel="noopener noreferrer" target="_blank">Download Resume</a>
+          </div>
         </div>
+        <aside class="impact-dashboard" aria-label="Engineering impact highlights">
+          <p class="impact-label">Engineering Impact</p>
+          <div class="impact-card impact-card--accent">
+            <p class="impact-value">60,000+</p>
+            <p class="impact-title">Monthly active users</p>
+            <p class="impact-note">InsightsE parent, teacher &amp; management apps</p>
+          </div>
+          <div class="impact-card">
+            <p class="impact-value">1 month</p>
+            <p class="impact-title">Desktop POS delivery</p>
+            <p class="impact-note">Independent Flutter canteen POS with hardware integrations</p>
+          </div>
+          <div class="impact-card">
+            <p class="impact-value">2</p>
+            <p class="impact-title">Flutter developers led</p>
+            <p class="impact-note">Mentoring, reviews, and delivery ownership</p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -135,18 +153,17 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="section-kicker">Career Highlights</span>
-          <h2 id="highlights-title">Verified outcomes from nearly six years of production work</h2>
-          <p>Precise labels—no invented percentages or unverified business metrics.</p>
+          <h2 id="highlights-title">Outcomes from nearly six years of production work</h2>
         </div>
-        <div class="metrics-grid reveal">
-          <article class="metric-card"><div class="value">Nearly 6</div><p class="label">Years of experience</p><p class="note">Professional work since December 2020</p></article>
-          <article class="metric-card"><div class="value">60,000+</div><p class="label">Monthly active users</p><p class="note">Across the InsightsE ecosystem</p></article>
-          <article class="metric-card"><div class="value">3</div><p class="label">Integrated Flutter apps</p><p class="note">Parents/students, teachers, management</p></article>
-          <article class="metric-card"><div class="value">~100</div><p class="label">Buses tracked</p><p class="note">GPS-equipped school transport</p></article>
-          <article class="metric-card"><div class="value">1 month</div><p class="label">Desktop POS delivery</p><p class="note">Independent Canteen build</p></article>
-          <article class="metric-card"><div class="value">2</div><p class="label">Flutter developers led</p><p class="note">Hands-on technical leadership</p></article>
-          <article class="metric-card"><div class="value">CI/CD</div><p class="label">Android &amp; iOS pipelines</p><p class="note">Built from scratch in GitLab</p></article>
-          <article class="metric-card"><div class="value">White-label</div><p class="label">Shared Flutter architecture</p><p class="note">Flavors, branding, feature config</p></article>
+        <div class="highlights-grid reveal">
+          <article class="highlight-item"><div class="value">Nearly 6</div><p class="label">Years of experience</p><p class="note">Since December 2020</p></article>
+          <article class="highlight-item"><div class="value">60,000+</div><p class="label">Monthly active users</p><p class="note">Across the InsightsE ecosystem</p></article>
+          <article class="highlight-item"><div class="value">3</div><p class="label">Integrated Flutter apps</p><p class="note">Parents/students, teachers, management</p></article>
+          <article class="highlight-item"><div class="value">~100</div><p class="label">Buses tracked</p><p class="note">GPS-equipped school transport</p></article>
+          <article class="highlight-item"><div class="value">1 month</div><p class="label">Desktop POS delivery</p><p class="note">Independent Canteen build</p></article>
+          <article class="highlight-item"><div class="value">2</div><p class="label">Flutter developers led</p><p class="note">Hands-on technical leadership</p></article>
+          <article class="highlight-item"><div class="value">CI/CD</div><p class="label">Android &amp; iOS pipelines</p><p class="note">Built in GitLab from scratch</p></article>
+          <article class="highlight-item"><div class="value">White-label</div><p class="label">Shared Flutter architecture</p><p class="note">Flavors, branding, feature config</p></article>
         </div>
       </div>
     </section>
@@ -308,11 +325,31 @@
           <article class="project-card flagship reveal" id="project-canteen">
             <span class="badge">Delivered independently in 1 month</span>
             <h3>InsightsE Canteen — Flutter Desktop POS</h3>
-            <p class="summary">Production Flutter desktop point-of-sale with wallet transactions, NFC/RFID identification, thermal receipts, offline queuing, and ERPNext API integration.</p>
-            <div class="placeholder-visual" aria-hidden="true">
-              <strong>Engineering case study</strong>
-              <span>Flutter Desktop · BLoC · NFC/RFID · Thermal Print · Offline Queue · ERPNext</span>
-              <span>// authentic product screenshots not available in repository</span>
+            <p class="summary">A production Flutter desktop point-of-sale I designed and shipped end-to-end in one month for school canteen operations.</p>
+            <ul class="checklist">
+              <li>Wallet-based payment workflows</li>
+              <li>NFC/RFID identification at the counter</li>
+              <li>Thermal receipt printing</li>
+              <li>Offline transaction queuing with sync and acknowledgments</li>
+              <li>ERPNext backend API integration</li>
+            </ul>
+            <div class="diagram-panel" role="img" aria-label="Canteen POS system components">
+              <svg class="flow-svg" viewBox="0 0 640 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="8" y="28" width="110" height="64" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="63" y="66" text-anchor="middle" font-size="13" fill="currentColor">Desktop POS</text>
+                <path d="M122 60 H150" stroke="currentColor" stroke-width="2" marker-end="url(#arr)"/>
+                <rect x="154" y="28" width="100" height="64" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="204" y="66" text-anchor="middle" font-size="13" fill="currentColor">NFC/RFID</text>
+                <path d="M258 60 H286" stroke="currentColor" stroke-width="2"/>
+                <rect x="290" y="28" width="100" height="64" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="340" y="66" text-anchor="middle" font-size="13" fill="currentColor">Thermal</text>
+                <path d="M394 60 H422" stroke="currentColor" stroke-width="2"/>
+                <rect x="426" y="28" width="100" height="64" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="476" y="66" text-anchor="middle" font-size="13" fill="currentColor">Offline Q</text>
+                <path d="M530 60 H558" stroke="currentColor" stroke-width="2"/>
+                <rect x="562" y="28" width="70" height="64" rx="10" fill="currentColor" opacity="0.18"/>
+                <text x="597" y="66" text-anchor="middle" font-size="12" fill="currentColor">ERPNext</text>
+              </svg>
             </div>
             <div class="btn-group" style="margin-top:1rem">
               <a class="btn btn-primary" href="./case-studies/canteen-pos.html">Read full case study</a>
@@ -321,45 +358,86 @@
 
           <article class="project-card reveal">
             <h3>Real-Time School Bus Tracking</h3>
-            <p class="summary">Architecture and implementation for approximately 100 GPS-equipped buses: REST for initial locations, Cloud Firestore listeners for live updates, Google Maps visualization, stale-location handling, and listener lifecycle management.</p>
-            <p><em>Not WebSocket-based.</em> Deep dive covers lifecycle and reconnection decisions.</p>
+            <p class="summary">Live location for approximately 100 GPS-equipped buses: REST for the initial load, Cloud Firestore snapshot listeners for updates, and Google Maps for visualization—with stale-location handling and lifecycle-aware listener cleanup.</p>
+            <div class="diagram-panel" role="img" aria-label="Bus tracking data flow">
+              <svg class="flow-svg" viewBox="0 0 640 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="10" y="22" width="120" height="56" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="70" y="55" text-anchor="middle" font-size="13" fill="currentColor">REST bootstrap</text>
+                <path d="M134 50 H170" stroke="currentColor" stroke-width="2"/>
+                <rect x="174" y="22" width="140" height="56" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="244" y="55" text-anchor="middle" font-size="13" fill="currentColor">Firestore listeners</text>
+                <path d="M318 50 H354" stroke="currentColor" stroke-width="2"/>
+                <rect x="358" y="22" width="120" height="56" rx="10" fill="currentColor" opacity="0.12"/>
+                <text x="418" y="55" text-anchor="middle" font-size="13" fill="currentColor">Google Maps</text>
+                <path d="M482 50 H518" stroke="currentColor" stroke-width="2"/>
+                <rect x="522" y="22" width="108" height="56" rx="10" fill="currentColor" opacity="0.18"/>
+                <text x="576" y="55" text-anchor="middle" font-size="12" fill="currentColor">Lifecycle</text>
+              </svg>
+            </div>
             <a class="btn btn-secondary" href="./case-studies/bus-tracking.html">Open case study</a>
           </article>
 
           <article class="project-card reveal">
             <h3>White-Label Flutter Architecture</h3>
-            <p class="summary">Shared codebase supporting multiple organizations through Flutter flavors, build variants, application identifiers, branding assets, and feature-specific configuration.</p>
+            <p class="summary">A shared Flutter codebase that ships organization-specific builds through flavors, identifiers, branding, and feature configuration.</p>
+            <div class="diagram-panel" role="img" aria-label="White-label shared core branching into flavors">
+              <svg class="flow-svg" viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="220" y="8" width="200" height="40" rx="10" fill="currentColor" opacity="0.18"/>
+                <text x="320" y="34" text-anchor="middle" font-size="13" fill="currentColor">Shared Flutter core</text>
+                <path d="M320 48 V70" stroke="currentColor" stroke-width="2"/>
+                <path d="M120 70 H520" stroke="currentColor" stroke-width="2"/>
+                <path d="M120 70 V88 M320 70 V88 M520 70 V88" stroke="currentColor" stroke-width="2"/>
+                <rect x="50" y="88" width="140" height="34" rx="8" fill="currentColor" opacity="0.12"/>
+                <text x="120" y="110" text-anchor="middle" font-size="12" fill="currentColor">Flavor A · branding</text>
+                <rect x="250" y="88" width="140" height="34" rx="8" fill="currentColor" opacity="0.12"/>
+                <text x="320" y="110" text-anchor="middle" font-size="12" fill="currentColor">Flavor B · config</text>
+                <rect x="450" y="88" width="140" height="34" rx="8" fill="currentColor" opacity="0.12"/>
+                <text x="520" y="110" text-anchor="middle" font-size="12" fill="currentColor">Flavor N · app IDs</text>
+              </svg>
+            </div>
             <a class="btn btn-secondary" href="./case-studies/white-label.html">Open case study</a>
           </article>
 
-          <article class="project-card reveal" id="project-rhapsody">
-            <h3>Rhapsody Merchandising</h3>
-            <p class="summary">Flutter app built from scratch for field merchandisers—store visits, reporting, store-level capture, camera, geolocation, filesystem access, offline-capable sync.</p>
-            <div class="media-row" style="grid-template-columns:minmax(0,420px)">
-              <figure>
-                <picture>
-                  <source type="image/webp" srcset="./assets/img/rms.webp" />
-                  <img loading="lazy" width="640" height="400" src="./assets/img/rms.png" alt="Rhapsody Merchandising field reporting screens" />
-                </picture>
-                <figcaption>Field merchandising workflows</figcaption>
-              </figure>
+          <article class="project-card project-card--split reveal" id="project-rhapsody">
+            <div>
+              <h3>Rhapsody Merchandising</h3>
+              <p class="summary">Flutter application built from scratch for field merchandisers.</p>
+              <ul class="checklist">
+                <li>Store visits and field reporting</li>
+                <li>Store-level data capture</li>
+                <li>Camera, geolocation, and file system access</li>
+                <li>Offline-capable workflows with backend sync</li>
+              </ul>
+              <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=rameolic.merchandising" target="_blank" rel="noopener noreferrer">View on Play Store</a>
             </div>
-            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=rameolic.merchandising" target="_blank" rel="noopener noreferrer">View on Play Store</a>
+            <figure class="project-shot">
+              <picture>
+                <source type="image/webp" srcset="./assets/img/rms.webp" />
+                <img loading="lazy" width="640" height="400" src="./assets/img/rms.png" alt="Rhapsody Merchandising field reporting screens" />
+              </picture>
+              <figcaption>Field merchandising workflows</figcaption>
+            </figure>
           </article>
 
-          <article class="project-card reveal" id="project-halo">
-            <h3>Halo CRM</h3>
-            <p class="summary">Flutter CRM built from scratch for lead tracking, delivery scheduling, and rider-related workflows with REST API integrations on Android and iOS.</p>
-            <div class="media-row" style="grid-template-columns:minmax(0,420px)">
-              <figure>
-                <picture>
-                  <source type="image/webp" srcset="./assets/img/halo.webp" />
-                  <img loading="lazy" width="640" height="400" src="./assets/img/halo.png" alt="Halo CRM mobile screens for leads and deliveries" />
-                </picture>
-                <figcaption>CRM mobile interfaces</figcaption>
-              </figure>
+          <article class="project-card project-card--split reveal" id="project-halo">
+            <div>
+              <h3>Halo CRM</h3>
+              <p class="summary">Flutter CRM built from scratch for Android and iOS.</p>
+              <ul class="checklist">
+                <li>Lead tracking</li>
+                <li>Delivery scheduling</li>
+                <li>Rider-related workflows</li>
+                <li>REST API integrations</li>
+              </ul>
+              <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=ae.ttf.halo_crm&amp;pcampaignid=web_share" target="_blank" rel="noopener noreferrer">View on Play Store</a>
             </div>
-            <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=ae.ttf.halo_crm&amp;pcampaignid=web_share" target="_blank" rel="noopener noreferrer">View on Play Store</a>
+            <figure class="project-shot">
+              <picture>
+                <source type="image/webp" srcset="./assets/img/halo.webp" />
+                <img loading="lazy" width="640" height="400" src="./assets/img/halo.png" alt="Halo CRM mobile screens for leads and deliveries" />
+              </picture>
+              <figcaption>CRM mobile interfaces</figcaption>
+            </figure>
           </article>
         </div>
       </div>
@@ -370,9 +448,9 @@
         <div class="section-head reveal">
           <span class="section-kicker">Screenshots</span>
           <h2 id="gallery-title">Application gallery</h2>
-          <p>Authentic screenshots from shipped products. Click to enlarge.</p>
+          <p>Product screenshots from InsightsE, Rhapsody Merchandising, and Halo CRM. Select an image to enlarge.</p>
         </div>
-        <div class="gallery-grid reveal" data-gallery-root></div>
+        <div class="gallery-grid reveal" data-gallery-root role="list"></div>
       </div>
     </section>
 
@@ -425,7 +503,7 @@
           <article class="challenge reveal" data-expandable>
             <button type="button" data-expand aria-expanded="false">2. Offline desktop transaction workflows</button>
             <div class="challenge-panel">
-              <p>Queue transactions when connectivity is unavailable, sync when it returns, use unique IDs and backend acknowledgments to support duplicate prevention—without claiming zero loss or inventing storage internals.</p>
+              <p>When connectivity drops, transactions continue through an offline queue, then sync when the network returns. Unique identifiers and backend acknowledgments help prevent duplicate posts during recovery.</p>
               <p><a href="./case-studies/canteen-pos.html">Canteen case study</a></p>
             </div>
           </article>
@@ -439,7 +517,7 @@
           <article class="challenge reveal" data-expandable>
             <button type="button" data-expand aria-expanded="false">4. Managing Flutter application complexity</button>
             <div class="challenge-panel">
-              <p>BLoC/Cubit, separation of concerns, reusable widgets, consistent UI patterns, modular delivery, and review discipline—without unverified performance claims.</p>
+              <p>BLoC/Cubit state management, separation of concerns, reusable widgets, consistent UI patterns, modular delivery, and structured code review keep large Flutter codebases maintainable as teams grow.</p>
             </div>
           </article>
         </div>
@@ -451,7 +529,7 @@
         <div class="section-head reveal">
           <span class="section-kicker">Technical Architecture</span>
           <h2 id="architecture-title">How I structure Flutter systems</h2>
-          <p>General engineering practices used across production work—distinct from any single confidential codebase.</p>
+          <p>Patterns I apply across production Flutter systems for clarity, reuse, and reliable delivery.</p>
         </div>
         <div class="reveal">
           <p>I separate UI from business logic, standardize state management with BLoC/Cubit, apply Clean Architecture and MVVM concepts where they clarify ownership, and keep reusable UI patterns consistent across modules. API integration, real-time data handling, error surfaces, and lifecycle awareness are treated as first-class concerns—not afterthoughts.</p>
@@ -476,17 +554,17 @@
         <div class="section-head reveal">
           <span class="section-kicker">CI/CD &amp; Releases</span>
           <h2 id="cicd-title">GitLab pipelines for Android and iOS</h2>
-          <p>Built from scratch. Store publication remains manual.</p>
+          <p>Release automation I built from scratch for Flutter mobile delivery.</p>
         </div>
         <div class="reveal">
-          <p>Tag-triggered pipelines install dependencies, generate Android APK/AAB and iOS IPA artifacts, and incorporate signing/provisioning workflows. Branching practices and release troubleshooting support predictable mobile releases.</p>
+          <p>Tag-triggered pipelines install dependencies, produce Android APK/AAB and iOS IPA artifacts, and run signing/provisioning workflows. Play Store and App Store uploads are completed as a separate release step after artifacts are ready.</p>
           <div class="pipeline" role="list" aria-label="CI/CD pipeline stages">
             <div class="pipeline-step" role="listitem">Tag trigger<small>Versioned release intent</small></div>
             <div class="pipeline-step" role="listitem">Dependencies<small>Flutter &amp; platform setup</small></div>
             <div class="pipeline-step" role="listitem">Android build<small>APK / AAB</small></div>
             <div class="pipeline-step" role="listitem">iOS build<small>IPA generation</small></div>
             <div class="pipeline-step" role="listitem">Signing<small>Provisioning workflows</small></div>
-            <div class="pipeline-step" role="listitem">Artifacts<small>Manual store publish</small></div>
+            <div class="pipeline-step" role="listitem">Artifacts<small>Ready for store upload</small></div>
           </div>
           <p style="margin-top:1rem"><a class="btn btn-secondary" href="./case-studies/gitlab-cicd.html">CI/CD case study</a></p>
         </div>
@@ -514,12 +592,12 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="section-kicker">Technical Leadership</span>
-          <h2 id="leadership-title">Hands-on lead, not a nontechnical manager</h2>
+          <h2 id="leadership-title">Leading delivery while staying hands-on</h2>
         </div>
         <div class="lead-grid reveal">
           <div class="lead-panel">
-            <p>I currently lead two Flutter developers through sprint planning, task allocation, mentoring, architecture discussions, UI quality standards, reusable component practices, code reviews, and merge approvals. Both developers can independently implement modules under my technical review.</p>
-            <p>I still own frontend architecture decisions, debugging, and production releases—and I collaborate closely with backend engineers and stakeholders.</p>
+            <p>I lead two Flutter developers through sprint planning, task allocation, mentoring, architecture discussions, UI quality standards, reusable component practices, code reviews, and merge approvals. Both developers deliver modules independently under my technical review.</p>
+            <p>I continue to own frontend architecture decisions, debugging, and production releases, working closely with backend engineers and stakeholders.</p>
           </div>
           <div class="lead-panel">
             <ul class="checklist">
@@ -558,7 +636,7 @@
         <div class="section-head reveal">
           <span class="section-kicker">Development Process</span>
           <h2 id="workflow-title">How features move from requirement to release</h2>
-          <p>Not every project has comprehensive automated test coverage; unit testing is applied where applicable.</p>
+          <p>A repeatable path from requirements to release, with unit testing applied where it adds the most confidence.</p>
         </div>
         <ol class="workflow reveal">
           <li class="workflow-step">Requirement Gathering</li>

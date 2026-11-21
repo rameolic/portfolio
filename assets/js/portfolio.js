@@ -226,13 +226,15 @@
         var webp = imageSrc(item.src, "webp");
         var png = imageSrc(item.src, "png");
         return (
-          '<button type="button" class="gallery-item" data-lightbox="' +
+          '<button type="button" class="gallery-item" role="listitem" data-lightbox="' +
           png +
           '" data-full="' +
           png +
           '" data-alt="' +
           item.alt.replace(/"/g, "&quot;") +
           '" data-caption="' +
+          item.caption.replace(/"/g, "&quot;") +
+          '" aria-label="Enlarge: ' +
           item.caption.replace(/"/g, "&quot;") +
           '">' +
           "<figure>" +

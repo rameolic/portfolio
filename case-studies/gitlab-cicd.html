@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GitLab CI/CD for Android &amp; iOS — Case Study | Ramkumar Koppula</title>
-  <meta name="description" content="Android and iOS GitLab CI/CD pipelines built from scratch: tag-triggered builds, signing workflows, and manual store publication." />
+  <title>GitLab CI/CD for Android &amp; iOS Case Study | Ramkumar Koppula</title>
+  <meta name="description" content="Android and iOS GitLab CI/CD pipelines built from scratch for Flutter: tag triggers, dependency setup, APK/AAB and IPA generation, signing, artifacts, and store upload as a release step." />
   <link rel="canonical" href="https://rameolic.github.io/portfolio/case-studies/gitlab-cicd.html" />
-  <meta property="og:title" content="GitLab CI/CD for Android &amp; iOS — Case Study" />
-  <meta property="og:description" content="Tag-triggered Flutter mobile pipelines with APK/AAB and IPA artifacts; store publishing managed manually." />
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="https://rameolic.github.io/portfolio/case-studies/gitlab-cicd.html" />
+  <meta property="og:title" content="GitLab CI/CD for Android &amp; iOS — Case Study" />
+  <meta property="og:description" content="Tag-triggered Flutter mobile pipelines producing signed Android and iOS artifacts." />
+  <meta property="og:image" content="https://rameolic.github.io/portfolio/assets/img/about-portrait.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GitLab CI/CD Case Study" />
+  <meta name="twitter:description" content="Flutter Android and iOS pipelines built from scratch in GitLab." />
+  <meta name="twitter:image" content="https://rameolic.github.io/portfolio/assets/img/about-portrait.jpg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,7 +28,7 @@
       <a class="brand" href="../index.html">Ramkumar Koppula</a>
       <nav aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="../index.html#projects">Work</a></li>
+          <li><a href="../index.html#cicd">CI/CD</a></li>
           <li><a href="../index.html#case-studies">Case Studies</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
@@ -39,49 +45,83 @@
       <div class="container">
         <p class="section-kicker">Engineering Case Study</p>
         <h1>GitLab CI/CD for Android &amp; iOS</h1>
-        <p>Personal ownership of mobile build pipelines built from scratch—automating compilation and artifact generation while keeping store publication manual.</p>
+        <p>Mobile build pipelines I created from scratch to make Flutter release artifacts repeatable.</p>
         <nav class="cs-toc" aria-label="On this page">
-          <a href="#scope">Scope</a>
-          <a href="#pipeline">Pipeline</a>
-          <a href="#practices">Release practices</a>
+          <a href="#intro">Introduction</a>
+          <a href="#context">Context</a>
+          <a href="#role">My role</a>
+          <a href="#approach">Approach</a>
+          <a href="#architecture">Pipeline</a>
+          <a href="#challenges">Challenges</a>
+          <a href="#outcomes">Outcomes</a>
         </nav>
       </div>
     </header>
 
     <article class="cs-content">
       <div class="container">
-        <h2 id="scope">What I built</h2>
-        <ul class="checklist">
-          <li>Tag-triggered builds for intentional release candidates</li>
-          <li>Dependency installation and Flutter/platform setup in CI</li>
-          <li>Android APK/AAB generation</li>
-          <li>iOS IPA generation</li>
-          <li>Signing and provisioning workflows</li>
-          <li>Build artifact generation for downstream release steps</li>
-        </ul>
+        <h2 id="intro">Project introduction</h2>
         <p>
-          Google Play Store and Apple App Store publication were managed manually. This case study does not claim fully automated store publishing.
+          I built Android and iOS GitLab CI/CD pipelines for Flutter applications so tagged revisions produce consistent installable artifacts for release.
         </p>
 
-        <h2 id="pipeline">Pipeline diagram</h2>
-        <div class="pipeline" role="list" aria-label="GitLab CI/CD pipeline">
-          <div class="pipeline-step" role="listitem">Git tag<small>Release trigger</small></div>
-          <div class="pipeline-step" role="listitem">Setup<small>Deps &amp; toolchain</small></div>
-          <div class="pipeline-step" role="listitem">Android<small>APK / AAB</small></div>
-          <div class="pipeline-step" role="listitem">iOS<small>IPA</small></div>
-          <div class="pipeline-step" role="listitem">Signing<small>Keys &amp; profiles</small></div>
-          <div class="pipeline-step" role="listitem">Artifacts<small>Manual store upload</small></div>
+        <h2 id="context">Problem / business context</h2>
+        <p>
+          Manual local builds slow releases and introduce machine-specific variance. The team needed automated compilation and signing while keeping store submission as a controlled release step.
+        </p>
+
+        <h2 id="role">My role and responsibilities</h2>
+        <ul class="checklist">
+          <li>Pipeline design and implementation from scratch</li>
+          <li>Tag-triggered build configuration</li>
+          <li>Dependency and toolchain setup in CI</li>
+          <li>Android APK/AAB and iOS IPA generation</li>
+          <li>Signing and provisioning workflows</li>
+          <li>Artifact generation and release troubleshooting</li>
+        </ul>
+
+        <h2 id="approach">Technical approach</h2>
+        <p>
+          A Git tag starts the pipeline. Shared setup installs dependencies, then platform jobs produce Android and iOS artifacts with signing. Generated builds are published as CI artifacts; Google Play and App Store uploads are completed afterward as part of the release process.
+        </p>
+
+        <h2 id="architecture">Pipeline diagram</h2>
+        <div class="cs-diagram-wrap">
+          <svg class="svg-diagram" viewBox="0 0 720 210" role="img" aria-labelledby="cicd-title">
+            <title id="cicd-title">Shared tag trigger and setup branching into Android and iOS build paths then signing and artifacts</title>
+            <rect class="box-accent" x="40" y="20" width="140" height="44" rx="8"/><text x="110" y="48" text-anchor="middle">Git tag</text>
+            <line x1="180" y1="42" x2="230" y2="42"/>
+            <rect class="box" x="230" y="20" width="160" height="44" rx="8"/><text x="310" y="48" text-anchor="middle">Setup &amp; deps</text>
+            <line x1="390" y1="42" x2="430" y2="42"/>
+            <line x1="430" y1="42" x2="430" y2="100"/>
+            <line x1="200" y1="100" x2="560" y2="100"/>
+            <line x1="200" y1="100" x2="200" y2="120"/>
+            <line x1="560" y1="100" x2="560" y2="120"/>
+            <rect class="box" x="120" y="120" width="160" height="44" rx="8"/><text x="200" y="148" text-anchor="middle">Android APK/AAB</text>
+            <rect class="box" x="480" y="120" width="160" height="44" rx="8"/><text x="560" y="148" text-anchor="middle">iOS IPA</text>
+            <line x1="200" y1="164" x2="200" y2="178"/>
+            <line x1="560" y1="164" x2="560" y2="178"/>
+            <line x1="200" y1="178" x2="560" y2="178"/>
+            <line x1="380" y1="178" x2="380" y2="188"/>
+            <rect class="box-accent" x="300" y="188" width="160" height="18" rx="4" opacity="0"/>
+            <rect class="box-accent" x="280" y="188" width="200" height="40" rx="8"/>
+            <text x="380" y="214" text-anchor="middle">Sign · artifacts · store upload</text>
+          </svg>
         </div>
 
-        <h2 id="practices">Branching and release troubleshooting</h2>
+        <h2 id="challenges">Engineering challenges and solutions</h2>
         <p>
-          Pipelines sit alongside Git branching practices used for feature work and release preparation. When builds fail—dependency drift, signing mismatches, or platform tooling issues—I troubleshoot through the CI logs and local reproduction to restore a reliable release path.
-        </p>
-        <p>
-          The value of the pipeline is repeatability: the same tagged revision produces the mobile artifacts used for store submission, reducing “works on my machine” variance during release week.
+          Signing, provisioning, and platform tooling are common failure points. Pipelines make those steps explicit and loggable, so release issues can be traced to a tagged revision instead of an individual developer machine.
         </p>
 
-        <p style="margin-top:2rem">
+        <h2 id="outcomes">Verified outcomes</h2>
+        <ul class="checklist">
+          <li>Tag-triggered Android and iOS Flutter pipelines</li>
+          <li>APK/AAB and IPA artifact generation with signing workflows</li>
+          <li>Repeatable release builds with store publication handled as a follow-on step</li>
+        </ul>
+
+        <p style="margin-top:2rem" class="btn-group">
           <a class="btn btn-primary" href="../index.html#cicd">Back to portfolio CI/CD</a>
           <a class="btn btn-secondary" href="./canteen-pos.html">Related: Canteen POS</a>
         </p>

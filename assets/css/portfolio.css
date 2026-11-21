@@ -316,7 +316,7 @@ a:hover {
 /* Hero */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: min(100vh - var(--nav-h), 820px);
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -341,14 +341,27 @@ a:hover {
 .hero-inner {
   position: relative;
   z-index: 1;
-  padding: clamp(3rem, 8vw, 6rem) 0;
+  padding: clamp(2.25rem, 5vw, 4rem) 0;
   width: min(100% - 2rem, var(--max));
   margin-inline: auto;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+}
+
+.hero-copy-col {
+  min-width: 0;
 }
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
   line-height: 1.05;
   margin: 0 0 0.5rem;
   letter-spacing: -0.03em;
@@ -356,17 +369,17 @@ a:hover {
 }
 
 .hero-role {
-  margin: 0 0 1.25rem;
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   color: var(--cyan);
   font-weight: 600;
 }
 
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.65rem);
   line-height: 1.3;
-  max-width: 22ch;
+  max-width: 24ch;
   margin: 0 0 1rem;
   font-weight: 500;
 }
@@ -379,15 +392,130 @@ a:hover {
 }
 
 .hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  margin-bottom: 1.75rem;
+  margin: 0 0 0.75rem;
   color: rgba(238, 246, 251, 0.7);
   font-size: 0.95rem;
 }
 
-/* Highlights / metrics */
+.hero-copy {
+  margin: 0 0 1.35rem;
+}
+
+/* Engineering Impact dashboard (hero) — distinct from Highlights */
+.impact-dashboard {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.impact-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.impact-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(7, 20, 34, 0.45);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  animation: impactIn 0.7s var(--ease) both;
+}
+
+.impact-card:nth-child(3) {
+  animation-delay: 0.08s;
+}
+
+.impact-card:nth-child(4) {
+  animation-delay: 0.16s;
+}
+
+.impact-card--accent {
+  border-color: rgba(34, 211, 238, 0.45);
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.45), rgba(7, 20, 34, 0.55));
+}
+
+.impact-value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.impact-title {
+  margin: 0.3rem 0 0.15rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.impact-note {
+  margin: 0;
+  color: rgba(238, 246, 251, 0.68);
+  font-size: 0.85rem;
+}
+
+@keyframes impactIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Career Highlights — flat strip, not glass hero cards */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+@media (min-width: 720px) {
+  .highlights-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.highlight-item {
+  padding: 1.15rem 1.1rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.highlight-item .value {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--accent-strong);
+  letter-spacing: -0.02em;
+}
+
+.highlight-item .label {
+  font-weight: 700;
+  margin: 0.4rem 0 0.1rem;
+  font-size: 0.92rem;
+}
+
+.highlight-item .note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Legacy metric cards retained for compatibility */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1140,5 +1268,148 @@ a:hover {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ===== V2 polish ===== */
+body {
+  overflow-x: hidden;
+}
+
+.diagram-panel {
+  margin: 1rem 0;
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  color: var(--accent-strong);
+}
+
+.flow-svg {
+  display: block;
+  width: 100%;
+  min-width: 480px;
+  height: auto;
+  max-height: 160px;
+}
+
+.project-card--split {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .project-card--split {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.project-shot {
+  margin: 0;
+  min-width: 0;
+}
+
+.project-shot img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--bg-muted);
+}
+
+.project-shot figcaption {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+}
+
+.gallery-item img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.svg-diagram {
+  width: 100%;
+  height: auto;
+  display: block;
+  color: var(--text);
+}
+
+.svg-diagram .box {
+  fill: var(--bg-elevated);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.svg-diagram .box-accent {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.svg-diagram text {
+  fill: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.svg-diagram .muted {
+  fill: var(--text-muted);
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.svg-diagram line,
+.svg-diagram path {
+  stroke: var(--accent-strong);
+  stroke-width: 1.75;
+  fill: none;
+}
+
+.cs-diagram-wrap {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-muted);
+  overflow-x: auto;
+}
+
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.menu-toggle:focus-visible,
+.timeline-summary:focus-visible,
+.challenge > button:focus-visible,
+.gallery-item:focus-visible,
+.case-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 374px) {
+  .hero-name {
+    font-size: 2rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  .nav-actions .btn-secondary {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .impact-card {
+    animation: none;
   }
 }

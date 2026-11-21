@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>White-Label Flutter Architecture — Case Study | Ramkumar Koppula</title>
-  <meta name="description" content="Shared Flutter architecture supporting multiple organizations with flavors, build variants, branding, and feature-specific configuration." />
+  <title>White-Label Flutter Architecture Case Study | Ramkumar Koppula</title>
+  <meta name="description" content="Shared Flutter architecture using flavors, build variants, branding, and feature configuration to ship multiple organization-specific applications from one codebase." />
   <link rel="canonical" href="https://rameolic.github.io/portfolio/case-studies/white-label.html" />
-  <meta property="og:title" content="White-Label Flutter Architecture — Case Study" />
-  <meta property="og:description" content="Shared codebase, Flutter flavors, branding, and configurable features for multi-organization delivery." />
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="https://rameolic.github.io/portfolio/case-studies/white-label.html" />
+  <meta property="og:title" content="White-Label Flutter Architecture — Case Study" />
+  <meta property="og:description" content="One shared Flutter codebase, many branded organization builds via flavors and configuration." />
+  <meta property="og:image" content="https://rameolic.github.io/portfolio/assets/img/about-portrait.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="White-Label Flutter Architecture Case Study" />
+  <meta name="twitter:description" content="Flavors, branding, and feature configuration for multi-organization Flutter apps." />
+  <meta name="twitter:image" content="https://rameolic.github.io/portfolio/assets/img/about-portrait.jpg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,51 +45,81 @@
       <div class="container">
         <p class="section-kicker">Engineering Case Study</p>
         <h1>White-Label Flutter Architecture</h1>
-        <p>Designing a shared Flutter application architecture that supports multiple organizations without maintaining fully separate codebases.</p>
+        <p>Shipping multiple organization-branded applications from a shared Flutter codebase.</p>
         <nav class="cs-toc" aria-label="On this page">
-          <a href="#problem">Problem</a>
+          <a href="#intro">Introduction</a>
+          <a href="#context">Context</a>
+          <a href="#role">My role</a>
           <a href="#approach">Approach</a>
-          <a href="#benefits">Benefits</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#challenges">Challenges</a>
+          <a href="#outcomes">Outcomes</a>
         </nav>
       </div>
     </header>
 
     <article class="cs-content">
       <div class="container">
-        <h2 id="problem">Problem</h2>
+        <h2 id="intro">Project introduction</h2>
         <p>
-          Multiple organizations need branded applications that share core product capabilities. Duplicating entire Flutter apps per organization increases maintenance cost, slows fixes, and fragments UI patterns. The architecture needed a single reusable codebase with controlled variation.
+          I designed a shared Flutter application architecture that supports multiple organizations without maintaining fully separate codebases for each branded app.
         </p>
 
-        <h2 id="approach">Technical approach</h2>
+        <h2 id="context">Problem / business context</h2>
+        <p>
+          Organizations need their own application identity—names, icons, splash screens, themes, identifiers—while sharing core product capabilities. Duplicating entire apps multiplies maintenance cost and slows fixes.
+        </p>
+
+        <h2 id="role">My role and responsibilities</h2>
         <ul class="checklist">
-          <li>Shared Flutter application codebase</li>
+          <li>Shared application architecture</li>
           <li>Flutter flavors and build variants</li>
-          <li>Different application identifiers per organization</li>
-          <li>Branded app names, icons, splash screens, and themes</li>
-          <li>Feature-specific configuration where organizations differ</li>
+          <li>Organization-specific application identifiers</li>
+          <li>Branding configuration</li>
+          <li>Feature-specific settings per organization</li>
         </ul>
 
-        <div class="arch-diagram" role="img" aria-label="White-label architecture diagram">
-          <div class="arch-row">
-            <div class="arch-node">Shared core<span>Features, UI patterns, domain</span></div>
-          </div>
-          <div class="arch-row">
-            <div class="arch-node">Flavor A<span>IDs, branding, config</span></div>
-            <div class="arch-node">Flavor B<span>IDs, branding, config</span></div>
-            <div class="arch-node">Flavor N<span>IDs, branding, config</span></div>
-          </div>
+        <h2 id="approach">Technical approach</h2>
+        <p>
+          Core modules stay shared. Flavors and build variants produce organization-specific binaries with distinct identifiers and branding assets. Feature configuration controls where product capabilities diverge.
+        </p>
+
+        <h2 id="architecture">Shared core to branded builds</h2>
+        <div class="cs-diagram-wrap">
+          <svg class="svg-diagram" viewBox="0 0 720 200" role="img" aria-labelledby="wl-title">
+            <title id="wl-title">Shared Flutter core branching into organization-specific flavors</title>
+            <rect class="box-accent" x="240" y="16" width="240" height="48" rx="10"/>
+            <text x="360" y="46" text-anchor="middle">Shared Flutter codebase</text>
+            <line x1="360" y1="64" x2="360" y2="92"/>
+            <line x1="120" y1="92" x2="600" y2="92"/>
+            <line x1="120" y1="92" x2="120" y2="118"/>
+            <line x1="360" y1="92" x2="360" y2="118"/>
+            <line x1="600" y1="92" x2="600" y2="118"/>
+            <rect class="box" x="40" y="118" width="160" height="64" rx="8"/>
+            <text x="120" y="145" text-anchor="middle">Org A build</text>
+            <text class="muted" x="120" y="165" text-anchor="middle">IDs · branding · config</text>
+            <rect class="box" x="280" y="118" width="160" height="64" rx="8"/>
+            <text x="360" y="145" text-anchor="middle">Org B build</text>
+            <text class="muted" x="360" y="165" text-anchor="middle">IDs · branding · config</text>
+            <rect class="box" x="520" y="118" width="160" height="64" rx="8"/>
+            <text x="600" y="145" text-anchor="middle">Org N build</text>
+            <text class="muted" x="600" y="165" text-anchor="middle">IDs · branding · config</text>
+          </svg>
         </div>
 
-        <h2 id="benefits">Why this helps</h2>
+        <h2 id="challenges">Engineering challenges and solutions</h2>
         <p>
-          Flavors and configuration keep organization-specific differences at the edges of the system—identity, branding, and feature flags—while shared modules absorb product improvements once. That improves maintainability and makes release management more predictable across branded deployments.
-        </p>
-        <p>
-          This case study describes the architectural approach used in production work. It does not expose confidential organization names, internal endpoints, or private configuration values.
+          The hard part is deciding what belongs in shared core versus flavor edges. Keeping branding and identifiers at the edge—and product logic in the shared modules—preserves a single place to improve features while still producing distinct store-ready apps.
         </p>
 
-        <p style="margin-top:2rem">
+        <h2 id="outcomes">Verified outcomes</h2>
+        <ul class="checklist">
+          <li>Reusable Flutter codebase across organizations</li>
+          <li>Flavor-based builds with distinct identifiers and branding</li>
+          <li>Configurable features without forking entire applications</li>
+        </ul>
+
+        <p style="margin-top:2rem" class="btn-group">
           <a class="btn btn-primary" href="../index.html#projects">Back to portfolio</a>
           <a class="btn btn-secondary" href="./gitlab-cicd.html">Next: GitLab CI/CD</a>
         </p>
